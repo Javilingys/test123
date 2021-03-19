@@ -6,9 +6,9 @@ namespace Core.Specifications
     {
         public ReaderWithFiltersSpec(ReaderSpecParams bookParams)
             : base(x => 
-                (string.IsNullOrEmpty(bookParams.FirstName) || x.FirstName.Contains(bookParams.FirstName)) &&
-                (string.IsNullOrEmpty(bookParams.LastName) || x.FirstName.Contains(bookParams.LastName)) &&
-                (string.IsNullOrEmpty(bookParams.MiddleName) || x.FirstName.Contains(bookParams.MiddleName))
+                (string.IsNullOrEmpty(bookParams.FirstName) || x.FirstName.ToLower().Contains(bookParams.FirstName)) &&
+                (string.IsNullOrEmpty(bookParams.LastName) || x.FirstName.ToLower().Contains(bookParams.LastName)) &&
+                (string.IsNullOrEmpty(bookParams.MiddleName) || x.FirstName.ToLower().Contains(bookParams.MiddleName))
             )
         {
 

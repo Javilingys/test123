@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Core.Entities
 {
     public class Book : BaseEntity
@@ -7,5 +9,6 @@ namespace Core.Entities
         public string Article { get; set; }
         public int PublishingYear { get; set; }
         public int Count { get; set; }
+        public ICollection<Reader> Readers { get; set; }
     }
 }
