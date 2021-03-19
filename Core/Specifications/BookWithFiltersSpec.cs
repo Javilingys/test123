@@ -9,13 +9,13 @@ namespace Core.Specifications
         (string.IsNullOrEmpty(bookParams.Search) || x.Name.ToLower().Contains(bookParams.Search))
     )
         {
-
+            AddInclude(x => x.Readers);
         }
 
         public BookWithFiltersSpec(int id)
             : base(x => x.Id == id)
         {
-
+            AddInclude(x => x.Readers);
         }
     }
 }
