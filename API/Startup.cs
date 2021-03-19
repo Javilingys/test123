@@ -32,7 +32,7 @@ namespace API
         {
             services.AddDbContext<AppDbContext>(opt => 
             {
-                opt.UseSqlite();
+                opt.UseSqlite(_config.GetConnectionString("DefaultConnection"));
             });
             services.AddControllers();
             services.AddSwaggerGen(c =>
